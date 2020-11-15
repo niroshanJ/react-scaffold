@@ -4,17 +4,19 @@ import './style.css';
 
 function NavBar() {
   return (
-    <Navbar bg="white" expand="lg">
+    <Navbar bg="white" expand="lg" className="navbar-fixed-top" fixed='top'>
       <Navbar.Brand>
         <NavBrandLink to='/'>
-          MySite!
+          Niroshan Jayathilaka
         </NavBrandLink>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-          <NavLink to="/">Home</NavLink>
+        <Nav className="ml-auto">
+          <NavLink to="/repositories">Repositories</NavLink>
+          <NavLink to="/blog">Blog</NavLink>
           <NavLink to="/about">About</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
