@@ -4,7 +4,7 @@ import './style.css';
 
 function NavBar() {
   return (
-    <Navbar bg="white" expand="lg" className="navbar-fixed-top" fixed='top'>
+    <Navbar bg="transparent" expand="lg" className="navbar-fixed-top" fixed='top'>
       <Navbar.Brand>
         <NavBrandLink to='/'>
           Niroshan Jayathilaka

@@ -9,25 +9,36 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      isTypingFinished: false
     };
+    this.typingFinished = this.typingFinished.bind(this);
+  }
+
+  typingFinished() {
+    this.setState({ isTypingFinished: true });
   }
 
   render() {
+    let backgroundAnimation = <></>;
+    if (this.state.isTypingFinished) {
+      backgroundAnimation = <ParticlesBg color="#ffffff" num={20} type="custom" bg={true} />
+    }
     return (
       <>
         <Helmet>
-          <html className="h-100" />
-          <body className="h-100" />
+          <title>{this.state.title}</title>
+          <meta name="description" content={this.state.shortDescription} />
         </Helmet>
         <div class='row p-3 h-100 align-items-center'>
-
-          <ParticlesBg color="#ff0000" num={5} type="circle" bg={true} />
+          {backgroundAnimation}
           <div class='col-md-12'>
             <div class='greeting text-center h-100'>
-              <Typing>
-                <p class='h1'>Hello!</p>
-                <h1>My name is Niroshan Jayathilaka</h1>
-                <h2 class='h3'>Welcome to my personal website!</h2>
+              <h1>Hi<br />
+              <small>My name is Niroshan Jayathilaka</small></h1>
+              <Typing onFinishedTyping={this.typingFinished}>
+                <p class='h4'>
+                  <small>Welcome to my site!</small>
+                </p>
               </Typing>
             </div>
           </div>

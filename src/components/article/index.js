@@ -19,7 +19,6 @@ class Article extends React.Component {
     return (
       <div class='article'>
         <Helmet>
-          <meta charSet="utf-8" />
           <title>{this.state.title}</title>
           <meta name="description" content={this.state.shortDescription} />
         </Helmet>
